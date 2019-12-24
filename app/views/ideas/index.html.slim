@@ -1,0 +1,8 @@
+h1 Listing ideas
+- @ideas.in_groups_of(3) do |group|
+  .row
+    - group.compact.each do |idea|
+      .col-md-4
+        = image_tag(idea.picture_url, :width => 70) if idea.picture.present?
+        h4= link_to idea.name, idea
+        = idea.description

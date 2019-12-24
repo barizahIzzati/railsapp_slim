@@ -1,0 +1,18 @@
+.row
+  .col-md-9
+    = image_tag(@idea.picture_url, width: '100%') if @idea.picture.present?
+  .col-md-3
+    p
+      b
+        | Name: 
+      = @idea.name
+    p
+      b
+        | Description: 
+      = @idea.description
+    p
+      = link_to 'Edit', edit_idea_path(@idea)
+      |  | 
+      = link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete
+      |  | 
+      = link_to 'Back', ideas_path
